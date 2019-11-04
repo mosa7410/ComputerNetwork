@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<div class="subject" id="first">HUE</div>
+<div class="div-wrapper">
+    <div id="left">
+        <div class="subject">HUE1</div>
+        <form name="hue1" value="Hue1" method="get" id="1">
+            <input type="hidden" name="1">
+            <p>On-Off</p>
+            <div class="switch">
+                <input type="radio" name="check" value="on" id="on1">
+                <label for="on1">ON</label>
+                <input type="radio" name="check" value="off" id="off1">
+                <label for="off1">OFF</label>
+            </div><br>
+            <p>Brightness</p>
+            <div>
+                <input type="range" min="-1" max="254" name="brightness" id="bright1" value="-1">
+                <div>value : <span id="slider_value1">0</span></div>
+            </div><br>
+            <p>Color</p>
+            <div>
+                <input type="number" min="0" max="1" step="0.05" name="color_x">
+                <input type="number" min="0" max="1" step="0.05" name="color_y"><br>
+            </div>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <div id="center">
+        <div class="subject">HUE2</div>
+        <form name="hue2" value="Hue2" method="get" id="2">
+            <input type="hidden" name="2">
+            <p>On-Off</p>
+            <div class="switch">
+                <input type="radio" name="check" value="on" id="on2">
+                <label for="on2">ON</label>
+                <input type="radio" name="check" value="off" id="off2">
+                <label for="off2">OFF</label>
+            </div><br>
+            <p>Brightness</p>
+            <div>
+                <input type="range" min="-1" max="254" name="brightness" id="bright2" value="-1">
+                <div>value : <span id="slider_value2">0</span></div>
+            </div><br>
+            <p>Color</p>
+            <div>
+                <input type="number" min="0" max="1" step="0.05" name="color_x">
+                <input type="number" min="0" max="1" step="0.05" name="color_y"><br>
+            </div>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <div id="right">
+        <div class="subject">HUE3</div>
+        <form name="hue3" value="Hue3" method="get" id="3">
+            <input type="hidden" name="3">
+            <p>On-Off</p>
+            <div class="switch">
+                <input type="radio" name="check" value="on" id="on3">
+                <label for="on3">ON</label>
+                <input type="radio" name="check" value="off" id="off3">
+                <label for="off3">OFF</label>
+            </div><br>
+            <p>Brightness</p>
+            <div>
+                <input type="range" min="-1" max="254" name="brightness" id="bright3" value="-1">
+                <div>value : <span id="slider_value3">0</span></div>
+            </div><br>
+            <p>Color</p>
+            <div>
+                <input type="number" min="0" max="1" step="0.05" name="color_x">
+                <input type="number" min="0" max="1" step="0.05" name="color_y"><br>
+            </div>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+<script language="JavaScript">
+    function showvalue(value, idname) {
+        var valueView = document.getElementById(idname);
+        valueView.innerHTML = value;
+    }
+
+    var Range = function () {
+        var r = $('#bright1');
+        r.on('input', function () {
+            showvalue(this.value, 'slider_value1');
+        });
+        var r = $('#bright2');
+        r.on('input', function () {
+            showvalue(this.value, 'slider_value2');
+        });
+        var r = $('#bright3');
+        r.on('input', function () {
+            showvalue(this.value, 'slider_value3');
+        });
+    };
+    Range();
+</script>
+<style>
+    body {
+        font-family: "Comic Sans MS";
+        font-size: 20px;
+    }
+    .div-wrapper {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #first {
+        margin: auto;
+        font-size: 28px;
+        padding: 20px;
+        width: 80%;
+    }
+
+    .subject {
+        width: 90%;
+        background: darkseagreen;
+        color: darkslategrey;
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: middle;
+    }
+
+    #left, #center, #right {
+        text-align: center;
+        display: inline-block;
+        width: 25%;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+        border: 2px solid darkslategrey;
+    }
+
+    input[type=submit] {
+        width: 80%;
+        background-color: darkslategrey;
+        color: white;
+        padding: 8px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    input[type=submit]:hover {
+        background-color: mediumseagreen;
+    }
+
+    p {
+        font-weight: bolder;
+    }
+</style>
+
+</body>
+</html>
